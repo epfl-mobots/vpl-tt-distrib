@@ -25,6 +25,8 @@ td {
 
 <h1>VPL Teacher Tools</h1>
 
+<p>This document explains how to install the teacher tools on your computer. You should follow the instructions in one of the following sections, depending on your operating system and your experience with Python.</p>
+
 <h3>Mac</h3>
 
 <p>Follow the link below and download the most recent .dmg file, double-click its icon to mount the image, and copy <em>VPL3Server.app</em> (maybe shown as <em>VPL3Server</em> depending on your settings) to a convenient location on your Mac, such as the Applications folder or the Desktop.</p>
@@ -39,21 +41,28 @@ td {
 
 <p>We don't have yet a packaged application for Windows. You should install Python&nbsp;3 unless you already have it (we suggest the <a href="https://www.python.org/downloads/windows/">official distribution</a>, but <a href="https://www.anaconda.com/products/individual">Anaconda</a> is a popular alternative if you intend to use Python beyond VPL; if you're asked, check the checkbox <em>Add Python 3.8 PATH</em>).</p>
 
-<p>Then download the most recent <a href="#generic">generic version</a> below and uncompress the zip file. To start the server, double-click <em>launch_windows.bat</em>. It will download and install required libraries if needed.</p>
+<p>If you're used to pip, the package installer for Python, download the most recent <a href="#whl">whl file</a> below and install it with pip (in a command window, type something like <code>python3 -m pip install vpl3tt-201021-py3-none-any.whl</code>). Then start the teacher tools with something like <code>python3 -m vpl3tt</code></p>
+
+<p>Otherwise, download the most recent <a href="#generic">generic version</a> below and uncompress the zip file. To start the server, double-click <em>launch_windows.bat</em>. It will download and install required libraries if needed.</p>
 
 <h3>Linux</h3>
 
-<p>Make sure Python&nbsp;3 is installed (type <code>python3</code> in a terminal, ctrl-d to quit). The first time, type</p>
+<p>Make sure Python&nbsp;3 is installed (type <code>python3</code> in a terminal, ctrl-d to quit). See <a href="#whl">below</a> to download and execute the whl file with pip.</p>
 
+<h3 id="whl">PIP package</h3>
+
+<p>PIP is the package installer for Python. It takes care of additional libraries the teacher tools depend on.</p>
+
+<ul>
+<li>Download the last whl file at <a href="https://github.com/epfl-mobots/vpl-tt-distrib/releases/">https://github.com/epfl-mobots/vpl-tt-distrib/releases/</a>.</li>
+<li>Move the whl file to the directory where you want to run it.</li>
+<li>In a terminal, change to that directory.</li>
+<li>Type the following commands. The first one is to install the Python packages and should be done once. It will fetch other Python packages from the Internet if needed. The second command launches the teacher tool server.</li>
 <pre>
-python3 -m pip install websocket websockets qrcode
+python3 -m pip install vpl3tt-201021-py3-none-any.whl
+python3 -m vpl3tt
 </pre>
-
-<p>Then get the most recent generic version below, uncompress it, and (in a terminal) cd to the root directory of the uncompressed zip file. To start the server, type</p>
-
-<pre>
-python3 launch_tk.py
-</pre>
+</ul>
 
 <h3>Generic</h3>
 
