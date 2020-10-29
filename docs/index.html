@@ -12,6 +12,7 @@ body {
 	max-width: 100ex;
 	margin-left: auto;
 	margin-right: auto;
+	font-family: sans-serif;
 }
 
 td {
@@ -25,54 +26,85 @@ td {
 
 <h1>VPL Teacher Tools</h1>
 
-<p>This document explains how to install the teacher tools on your computer. You should follow the instructions in one of the following sections, depending on your operating system and your experience with Python.</p>
+<p>VPL (Visual Programming Language) is a simple programming environment for the Thymio II educational robot. Programs are made of a set of rules to make the robot react to events. Events are typically triggered by changes in the values measured by sensors, such as obstacles coming closer or going further away, or touch of a capacitive button. They can be refined with additional conditions to combine multiple sensors or acting differently depending on what happened in the past. Actions make the other half of rules: they define what happens when a rule is activated. They can make the robot move by acting on its motors, or change its color by setting the red, green and blue brightness of one of its RGB LEDs. VPL programs are made of the combination of blocks. A block is the graphical representation of an elementary event, condition or action with its parameters. The environment runs in the web browser, on a computer or a tablet.</p>
+
+<p>The VPL Teacher Tools are a software environment which helps teachers to deploy VPL in their classroom and supervise the activities with their pupils. They are installed as a single application on the computer of the teacher. Except from basic settings such as the choice of the language, most of the user interface runs as web applications in a browser, on the same computer or elsewhere, e.g. on the teacher's tablet.</p>
+
+<p>The VPL Teacher Tools manage the association between VPL running on the pupils' computers or tablets and the robot. But the communication between VPL and the robots requires <a href="https://www.thymio.org/program/" target="thymio">Thymio Suite</a>, the main application provided with the Thymio. It should be installed once on the same computer as the Teacher Tools. Pupil computers make two connections: one with the Teacher Tools to download VPL and to exchange data with the teacher's dashboard, and one with Thymio Suite which forwards programs to the Thymio associated with the pupil or a group of pupils.</p>
+
+<p>The VPL Teacher Tools are implemented in Python. There are several ways to run them. If you're familiar with Python, you can install them like any other Python package. Otherwise, you can run them like any other application: on a Mac, copy them to your hard disk from a dmg disk image; on Windows, install them from an msi file; or on Linux, type a command in a terminal. In all cases, the files can be found under the following link. You probably want to pick the latest version.</p>
+
+<p style="text-align: center;"><a href="https://github.com/epfl-mobots/vpl-tt-distrib/releases/" target="tt">https://github.com/epfl-mobots/vpl-tt-distrib/releases/</a></p>
 
 <h3>Mac</h3>
 
-<p>Follow the link below and download the most recent .dmg file, double-click its icon to mount the image, and copy <em>VPL3Server.app</em> (maybe shown as <em>VPL3Server</em> depending on your settings) to a convenient location on your Mac, such as the Applications folder or the Desktop.</p>
-
-<p><a href="https://github.com/epfl-mobots/vpl-tt-distrib/releases/">https://github.com/epfl-mobots/vpl-tt-distrib/releases/</a></p>
+<p>Follow the link above and download the most recent .dmg file, double-click its icon to mount the image, and copy <em>VPL3Server.app</em> (maybe shown as <em>VPL3Server</em> depending on the Finder preferences) to a convenient location on your Mac, such as the Applications folder or the Desktop.</p>
 
 <p>At least the first time, the Mac is likely to complain that the application represents a security risk. To open it anyway, control-click its icon, choose Open in the contextual menu; in the dialog, click the checkbox to not show warnings again if there is one, and click Open. Repeat once if it fails.</p>
 
-<p>Should it still fail, install <a href="https://www.python.org/downloads/mac-osx/">Python&nbsp;3</a>, download the most recent <a href="#generic">generic version</a> below, uncompress the zip file, and double-click <em>launch_mac.command</em> (maybe shown as <em>launch_mac</em>).</p>
+<p>We're still evaluating the best technology to package the Teacher Tools into a Mac application. Should you have difficulties with <em>VPL3Server.app</em>, or should you want to give us more feedback, please try <em>VPL3Server-cxf.app</em> the same way. It has exactly the same functionality. You can run any of them alternatively; they use the same files. But don't run them simultaneously, that would fail.</p>
+
+<p>Should it still fail, please try with the Python package as explained below. We can help if you need it.</p>
 
 <h3>Windows</h3>
 
-<p>We don't have yet a packaged application for Windows. You should install Python&nbsp;3 unless you already have it (we suggest the <a href="https://www.python.org/downloads/windows/">official distribution</a>, but <a href="https://www.anaconda.com/products/individual">Anaconda</a> is a popular alternative if you intend to use Python beyond VPL; if you're asked, check the checkbox <em>Add Python 3.8 PATH</em>).</p>
+<p>Unless you're sure to already have done it or you've installed Visual Studio, download the file below and double-click it to install Microsoft libraries required by the VPL Teacher Tools. It's a set of system files provided by Microsoft for free, only used by applications which need them.</p>
 
-<p>If you're used to pip, the package installer for Python, download the most recent <a href="#whl">whl file</a> below and install it with pip (in a command window, type something like <code>python3 -m pip install vpl3tt-201021-py3-none-any.whl</code>). Then start the teacher tools with something like <code>python3 -m vpl3tt</code></p>
+<p style="text-align: center;"><a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="ms">https://aka.ms/vs/16/release/vc_redist.x64.exe</a></p>
 
-<p>Otherwise, download the most recent <a href="#generic">generic version</a> below and uncompress the zip file. To start the server, double-click <em>launch_windows.bat</em>. It will download and install required libraries if needed.</p>
+<p>For the Teacher Tools themselves, follow the first link above and download the most recent .msi file, double-click it and proceed until the end. A shortcut named "VPL3 Server" will be created on the Desktop. We don't expect it will happen, but should you want to uninstall the software, open the .msi file again; you'll be asked whether you want to repair it or remove it.</p>
+
+<p>Should this method fail, please try with the Python package as explained below. We can help if you need it.</p>
 
 <h3>Linux</h3>
 
-<p>Make sure Python&nbsp;3 is installed (type <code>python3</code> in a terminal, ctrl-d to quit). See <a href="#whl">below</a> to download and execute the whl file with pip.</p>
+<p>Make sure Python&nbsp;3 with PIP is installed (type <code>python3</code> in a terminal, ctrl-d to quit; and <code>python3&nbsp;-m&nbsp;pip&nbsp;-V</code> for PIP). Continue with next section to download and install the whl file with PIP.</p>
 
-<h3 id="whl">PIP package</h3>
+<h3 id="whl">Python package</h3>
+
+<p>The Mac and Windows applications described above contain their own Python system. To run by hand the Python package which implements the Teacher Tools, you first need to check that Python&nbsp;3 is already installed on your computer, or do it. You also need PIP, the Package Installer for Python, often bundled with Python.</p>
+
+<p>To check if you have Python&nbsp;3, open a terminal and type <code>python3</code>. If it fails, try just <code>python</code> and check the version number: it should be 3 followed by some additional digits. If it's 2, or if no Python if found at all, install it.</p>
+
+<p>On Mac and Windows, you'll find installers here:</p>
+
+<p style="text-align: center;"><a href="https://www.python.org/downloads/" target="py">https://www.python.org/downloads/</a></p>
+
+<p>On Windows, if you're asked, check the checkbox <em>Add Python PATH</em>.</p>
+
+<p>On Linux, your package manager must have a version compiled for your system. On Ubuntu and other Debian-based systems, type the following command in a terminal:</p>
+
+<pre>sudo apt install python3-pip
+</pre>
+
+<p>With other Linux variants, you're on your own, but Python is so common you shouldn't have difficulty in finding help on the Web or elsewhere. Don't forget you also need Thymio Suite (or at least Thymio Device Manager, a part of it) and connecting Thymio robots; compiling it is significantly more challenging.</p>
 
 <p>PIP is the package installer for Python. It takes care of additional libraries the teacher tools depend on.</p>
 
+<p>Then for the Teacher Tools themselves:</p>
+
 <ul>
-<li>Download the last whl file at <a href="https://github.com/epfl-mobots/vpl-tt-distrib/releases/">https://github.com/epfl-mobots/vpl-tt-distrib/releases/</a>.</li>
-<li>Move the whl file to the directory where you want to run it.</li>
-<li>In a terminal, change to that directory.</li>
-<li>Type the following commands. The first one is to install the Python packages and should be done once. It will fetch other Python packages from the Internet if needed. The second command launches the teacher tool server.</li>
-<pre>
-python3 -m pip install vpl3tt-201021-py3-none-any.whl
-python3 -m vpl3tt
+<li>Download the last .whl file at the first link above.</li>
+<li>In a terminal, change to the directory where the .whl file is, typically <code>Downloads</code>.</li>
+<li>Type the following commands to install the Python packages. It will fetch other Python packages from the Internet if needed.</li>
+<pre>python3 -m pip install vpl3tt-201021-py3-none-any.whl
+</pre>
+<li>To launch the teacher tool server, type</li>
+<pre>python3 -m vpl3tt
 </pre>
 </ul>
 
-<h3>Generic</h3>
+<p>Whatever directory where you launch the Teacher Tools, two files will be created or used: <em>vplserver-db.sqlite</em> with the list of pupils, files, robots, etc.; and <em>vplserver-prefs.json</em> with your preferences, such as the language.</p>
 
-<p>Zip files are just the text files of the teacher tools with Python source code, the teacher tools with their web user interface, VPL 3, and a few data files. They can be run on any computer which supports Python 3 and its distribution system PyPI.</p>
+<h3>Generic source code</h3>
 
-<p>Zip files can be found at the same place, at <a href="https://github.com/epfl-mobots/vpl-tt-distrib/releases/">https://github.com/epfl-mobots/vpl-tt-distrib/releases/</a>.</p>
+<p>Zip files are just the text files of the teacher tools with Python source code, the teacher tools with their web user interface, VPL 3, and a few data files. They can be run on any computer which supports Python 3 and its distribution system PIP.</p>
 
 <h3>Database format change</h3>
 
 <p>If release notes indicate that the database format has changed, please delete file vplserver-db.sqlite in your home directory manually. You will loose all its content, including the pupil names and the files. To preserve the pupil names, you can export them with your current version of the VPL Teacher Tools, delete vplserver-db.sqlite and upgrade the VPL Teacher Tools, and import the pupil names in the new version. Likewise for the teacher files, you can export them with the current version and reimport them with the new version.</p>
+
+<address style="font-style: normal; font-size: 80%; text-align: right;">YP/29-Oct-2020</address>
 
 </body>
 
