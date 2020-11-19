@@ -38,11 +38,30 @@ td {
 
 <h3>Mac</h3>
 
-<p>Follow the link above and download the most recent .dmg file, double-click its icon to mount the image, and copy <em>VPL3Server.app</em> (maybe shown as <em>VPL3Server</em> depending on the Finder preferences) to a convenient location on your Mac, such as the Applications folder or the Desktop.</p>
+<p>Follow the link above and download the most recent .dmg file, double-click its icon to mount the image, and copy <em>VPL3Server.app</em> (maybe shown as <em>VPL3Server</em> depending on the Finder preferences) to a convenient location on your Mac, such as the Applications folder (command-shift-A in the Finder) or the Desktop (command-shift-D to open it in a window).</p>
 
-<p>At least the first time, the Mac is likely to complain that the application represents a security risk. To open it anyway, control-click its icon, choose Open in the contextual menu; in the dialog, click the checkbox to not show warnings again if there is one, and click Open. Repeat once if it fails.</p>
+<p>At least the first time, the Mac is likely to complain that the application represents a security risk (error message "VPL3Server.app cannot be opened because the developer cannot be verified" or equivalent). To open it anyway, at least the first time after you've downloaded it, try this:</p>
 
-<p>We're still evaluating the best technology to package the Teacher Tools into a Mac application. Should you have difficulties with <em>VPL3Server.app</em>, or should you want to give us more feedback, please try <em>VPL3Server-cxf.app</em> the same way. It has exactly the same functionality. You can run any of them alternatively; they use the same files. But don't run them simultaneously, that would fail.</p>
+<ul>
+	<li>click the Cancel button to discard the warning</li>
+	<li>open the System Preferences</li>
+	<li>click the Security & Privacy icon, tab "General"</li>
+	<li>depending on the version of macOS, either allow to run applications which don't come from App Store and identified developers, or click the "Open Anyway" button next to the message about blocking VPL3Server.app.</li>
+</ul>
+
+<p>Then try again to launch VPL3Server.app.</p>
+
+<p>There is an alternative, more direct way to start unsigned applications:</p>
+
+<ul>
+	<li>right-click (or control-click) VPL3Server.app's icon to display a contextual menu</li>
+	<li>choose Open</li>
+	<li>if you open it directly from the disk image, in the dialog box, select "Don't warn me when opening applications on this disk image"</li>
+	<li>click Open</li>
+	<li>if a dialog asks "Do you want the application VPL3Server.app to accept incoming network connections?", click Allow.</li>
+</ul>
+
+If you've done all these steps and it fails once, try a second time.
 
 <p>Should it still fail, please try with the Python package as explained below. We can help if you need it.</p>
 
