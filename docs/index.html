@@ -79,12 +79,15 @@ If you've done all these steps and it fails once, try a second time.
 
 <p>Make sure Python&nbsp;3 with PIP is installed (type <code>python3</code> in a terminal, ctrl-d to quit; and <code>python3&nbsp;-m&nbsp;pip&nbsp;-V</code> for PIP).</p>
 
-<p>For the Teacher Tools, follow the first link above and download the most recent .pex file. Then open a terminal, change directory to where the .pex file is stored (typically in ~/Downloads if you haven't moved it), and type</p>
+<p>For the Teacher Tools, follow the first link above and download the most recent .whl file. Then open a terminal, change directory to where the .whl file is stored (typically in ~/Downloads if you haven't moved it), and type</p>
 
-<pre>python3 vpl3tt-0.1.0.pex
+<pre>python3 -m pip install vpl3tt-201021-py3-none-any.whl
 </pre>
 
-<p>(adjust the file name if you have to).</p>
+<p>to install the teacher tools and their dependencies (adjust the file name if you have to). To launch the teacher tools server, type</p>
+
+<pre>python3 -m vpl3tt
+</pre>
 
 <h3 id="whl">Python package</h3>
 
